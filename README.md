@@ -1,7 +1,9 @@
 ## codepath
 
 ### App Description
-My introduction into Android programming, a simple app for the Codepath Mobile App Design Workshop Series. It does everything mentioned below under Required and Optional User Stories.
+My introduction to Android programming, a simple app for the Codepath Mobile App Design Workshop Series. It does everything mentioned below under Required and Optional User Stories, plus a few extras!
+
+Thanks!
 
 ### App Walk-though
 
