@@ -1,8 +1,10 @@
 package com.example.ccm98.codepath;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -14,7 +16,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener()
+        findViewById(R.id.textColor).setOnClickListener(new View.OnClickListener()
         {
             int myCounter = 0;
 
@@ -22,48 +24,105 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 //Log.i("text1", "text2");
-                if(myCounter == 0)
+
+                switch(myCounter)
                 {
-                    ((TextView) findViewById(R.id.textView)).setTextColor(
-                            getResources().getColor(R.color.red));
-                    myCounter++;
+                    case 0:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.red));
+                        myCounter++;
+                        break;
+                    case 1:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.orange));
+                        myCounter++;
+                        break;
+                    case 2:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.yellow));
+                        myCounter++;
+                        break;
+                    case 3:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.green));
+                        myCounter++;
+                        break;
+                    case 4:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.blue));
+                        myCounter++;
+                        break;
+                    case 5:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.indigo));
+                        myCounter++;
+                        break;
+                    case 6:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.violet));
+                        myCounter = 0;
+                        break;
+                    default:
+                        ((TextView) findViewById(R.id.textView)).setTextColor(
+                                getResources().getColor(R.color.black));
+                        myCounter = 0;
+                        break;
                 }
-                else if(myCounter == 1)
+            }
+        });
+
+        findViewById(R.id.backgroundColor).setOnClickListener(new View.OnClickListener()
+        {
+            int myColorValue = -2145219806;
+
+            @Override
+            public void onClick(View v)
+            {
+                int myCurrentColor = ((ColorDrawable) findViewById(R.id.rootView).getBackground()).getColor();
+
+                if(myCurrentColor == myColorValue)
                 {
-                    ((TextView)findViewById(R.id.textView)).setTextColor(
-                            getResources().getColor(R.color.orange));
-                    myCounter++;
+                    findViewById(R.id.rootView).setBackgroundColor(
+                            getResources().getColor(R.color.paleRed));
                 }
-                else if(myCounter == 2)
+                else
                 {
-                    ((TextView)findViewById(R.id.textView)).setTextColor(
-                            getResources().getColor(R.color.yellow));
-                    myCounter++;
+                    findViewById(R.id.rootView).setBackgroundColor(
+                            getResources().getColor(R.color.myColor));
                 }
-                else if(myCounter == 3)
+            }
+        });
+
+        findViewById(R.id.textString).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //((TextView) findViewById(R.id.textView)).setText("Text Changed.");
+                String myText = ((EditText) findViewById(R.id.editText)).getText().toString();
+                if(!myText.isEmpty())
                 {
-                    ((TextView)findViewById(R.id.textView)).setTextColor(
-                            getResources().getColor(R.color.green));
-                    myCounter++;
+                    ((TextView) findViewById(R.id.textView)).setText(myText);
+                    findViewById(R.id.editText).clearFocus();
+                    ((EditText)findViewById(R.id.editText)).getText().clear();
                 }
-                else if(myCounter == 4)
+                else
                 {
-                    ((TextView)findViewById(R.id.textView)).setTextColor(
-                            getResources().getColor(R.color.blue));
-                    myCounter++;
+                    ((TextView) findViewById(R.id.textView)).setText("Android is Awesome!");
                 }
-                else if(myCounter == 5)
-                {
-                    ((TextView)findViewById(R.id.textView)).setTextColor(
-                            getResources().getColor(R.color.indigo));
-                    myCounter++;
-                }
-                else if(myCounter == 6)
-                {
-                    ((TextView)findViewById(R.id.textView)).setTextColor(
-                            getResources().getColor(R.color.violet));
-                    myCounter = 0;
-                }
+            }
+        });
+
+        findViewById(R.id.rootView).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ((TextView) findViewById(R.id.textView)).setText("Hello from Charles!");
+                ((TextView) findViewById(R.id.textView)).setTextColor(
+                        getResources().getColor(R.color.black));
+                findViewById(R.id.rootView).setBackgroundColor(
+                        getResources().getColor(R.color.myColor));
             }
         });
     }
