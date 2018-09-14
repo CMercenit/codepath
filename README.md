@@ -5,7 +5,7 @@ My introduction into Android programming, a simple app for the Codepath Mobile A
 
 ### App Walk-though
 
-<img src="https://imgur.com/HoJb0Pj" width=200><br>
+<img src="<blockquote class="imgur-embed-pub" lang="en" data-id="a/UO6LbRL"><a href="//imgur.com/UO6LbRL"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>" width=200><br>
 
 ### Required User Stories
 - [x] 1. User sees custom text in a label - Hello from {name}!
