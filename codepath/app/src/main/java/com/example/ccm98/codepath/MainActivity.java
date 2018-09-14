@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                //Log.i("text1", "text2");
-
                 switch(myCounter)
                 {
                     case 0:
@@ -98,7 +96,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                //((TextView) findViewById(R.id.textView)).setText("Text Changed.");
                 String myText = ((EditText) findViewById(R.id.editText)).getText().toString();
                 if(!myText.isEmpty())
                 {
